@@ -10,12 +10,12 @@ export function FetchCustomerTable(token, dispatch) {
   console.log(headers, ">>>>>.");
   Axios.get("https://herodealersapp.herokuapp.com/getCustomer/getAll", {
     headers,
-    params: { dealer_id: "0019D000009zum3QAA" },
+    params: { dealer_id: "0019D00000B1f95QAB" },
   })
     .then((response) =>
       dispatch({
         type: "FETCH_CUSTOMER_DETAILS",
-        payload: response.data,
+        payload: response.data.data,
         loading: false,
       })
     )
