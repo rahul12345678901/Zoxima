@@ -219,14 +219,10 @@ function CustomerPage(props) {
                           fontSize: 18,
                         }}
                       >
-                        First Name
+                        Name
                       </p>
                     </TableCell>
-                    <TableCell align="right">
-                      <p style={{ fontWeight: "bolder", fontSize: 18 }}>
-                        Last Name
-                      </p>
-                    </TableCell>
+
                     <TableCell align="right">
                       <p style={{ fontWeight: "bolder", fontSize: 18 }}>
                         Contact Number
@@ -239,21 +235,30 @@ function CustomerPage(props) {
                     </TableCell>
                     <TableCell align="right">
                       <p style={{ fontWeight: "bolder", fontSize: 18 }}>
-                        Purchase Date
+                        TallyInvoiceNo.
+                      </p>
+                    </TableCell>
+                    <TableCell align="right">
+                      <p style={{ fontWeight: "bolder", fontSize: 18 }}>
+                        Lead Status
                       </p>
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {Paginate(customer_details).map((row) => (
+                  {/* {console.log(customer_details[0].data.name, ">>>>>>>")} */}
+                  {customer_details.map((row) => (
                     <TableRow key={row.name}>
                       <TableCell component="th" scope="row">
-                        {row.firstname}
+                        {row.name}
                       </TableCell>
-                      <TableCell align="right">{row.lastName}</TableCell>
-                      <TableCell align="right">{row.contact}</TableCell>
-                      <TableCell align="right">{row.sale}</TableCell>
-                      <TableCell align="right">{row.date}</TableCell>
+
+                      <TableCell align="right">{row.mobilephone}</TableCell>
+                      <TableCell align="right">{row.product_name}</TableCell>
+                      <TableCell align="right">
+                        {row.tally_invoice_no__c}
+                      </TableCell>
+                      <TableCell align="right">{row.lead_status__c}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
