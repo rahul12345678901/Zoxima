@@ -246,7 +246,6 @@ function CustomerPage(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {/* {console.log(customer_details[0].data.name, ">>>>>>>")} */}
                   {customer_details.map((row) => (
                     <TableRow key={row.name}>
                       <TableCell component="th" scope="row">
